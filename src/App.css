@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Work+Sans:wght@400;500&display=swap');
+
+:root {
+  --ink: #1b1f2a;
+  --paper: #f2efe9;
+  --amber: #e3a857;
+  --teal: #4c7a73;
+  --card: #232838;
+  --line: #343b4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Work Sans', sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+/* Header */
+.app-header {
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+  padding: 3.5rem 1.5rem 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.app-header-inner {
+  max-width: 560px;
+  width: 100%;
+}
+
+.app-header-mark {
+  color: var(--amber);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+
+.app-header-title {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 3rem;
+  margin: 0.25rem 0 0.4rem;
+  color: var(--paper);
+}
+
+.app-header-subtitle {
+  margin: 0;
+  color: var(--teal);
+  font-size: 1rem;
+}
+
+/* Main layout */
+.app-main {
+  width: 100%;
+  max-width: 560px;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.song-section {
+  padding-top: 2.5rem;
+}
+
+.song-section-title {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+  color: var(--paper);
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-input {
+  flex-grow: 1;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.65rem 0.85rem;
+  color: var(--paper);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.95rem;
+}
+
+.search-input::placeholder {
+  color: #6d7386;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--amber);
+}
+
+.search-btn {
+  background: var(--amber);
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1.25rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.search-btn:hover {
+  opacity: 0.85;
+}
+
+/* Status messages */
+.status-message {
+  color: #8b91a3;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.status-error {
+  color: #e07a5f;
+  border: 1px solid #e07a5f;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.status-error p {
+  margin: 0;
+}
+
+.retry-btn {
+  background: transparent;
+  border: 1px solid #e07a5f;
+  color: #e07a5f;
+  border-radius: 4px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background: #e07a5f;
+  color: var(--ink);
+}
+
+/* Song title as link */
+.song-title-link {
+  text-decoration: none;
+}
+
+.song-title-link .song-title {
+  color: var(--paper);
+  transition: color 0.15s ease;
+}
+
+.song-title-link:hover .song-title {
+  color: var(--amber);
+}
+
+/* Song detail page */
+.back-link {
+  display: inline-block;
+  color: var(--teal);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.back-link:hover {
+  color: var(--amber);
+}
+
+.song-detail {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+}
+
+.song-detail-row {
+  margin: 0.4rem 0;
+  color: var(--paper);
+  font-size: 0.95rem;
+}
+
+.song-detail-row strong {
+  color: var(--teal);
+  font-weight: 500;
+  margin-right: 0.35rem;
+}
+
+.library-empty {
+  color: #8b91a3;
+  font-size: 0.95rem;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin: 0;
+}
+
+/* Song list */
+.song-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.song-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+.song-index {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.1rem;
+  color: var(--amber);
+  width: 1.5rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.song-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.song-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--paper);
+}
+
+.song-artist {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: var(--teal);
+}
+
+.song-album {
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: #8b91a3;
+  font-style: italic;
+}
+
+.song-duration {
+  font-variant-numeric: tabular-nums;
+  color: #8b91a3;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.song-add-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-family: 'Work Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.song-add-btn:hover {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  .app-header-title {
+    font-size: 2.25rem;
+  }
+
+  .song-card {
+    padding: 0.85rem 1rem;
+  }
+}
